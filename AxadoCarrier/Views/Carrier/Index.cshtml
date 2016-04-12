@@ -35,42 +35,4 @@
 
 @Html.ActionLink("Create a new carrier", "Create", "Carrier", new { @class = "btn btn-primary" })
 
-@using (@Html.BeginForm(MVC.Carrier.ActionNames.Delete, MVC.Carrier.Name, FormMethod.Post, new { @class = "form-horizontal" } ))
-{
-    <div id="modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Carrier Delete</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure about this?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="confirmDeletion">Confirm</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-}
-
-<script type="text/javascript">
-
-    $(document).ready(function () {
-
-        var $this;
-
-        $(".btn-delete").click(function (e) {
-            e.preventDefault();
-            $this = $(this);
-        });
-
-        $("#confirmDeletion").click(function () {
-            var id = $this.prop('id');
-            $.post("@Url.Action(MVC.Carrier.ActionNames.Delete, MVC.Carrier.Name)", { id: id });
-        });
-    });
-
-</script>
+@Html.Partial(MVC.Carrier.Views.PartialView.Delete, new CarrierViewModel())

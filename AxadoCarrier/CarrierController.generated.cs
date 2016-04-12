@@ -160,6 +160,19 @@ namespace AxadoCarrier.Controllers
             public readonly string Details = "~/Views/Carrier/Details.cshtml";
             public readonly string Edit = "~/Views/Carrier/Edit.cshtml";
             public readonly string Index = "~/Views/Carrier/Index.cshtml";
+            static readonly _PartialViewClass s_PartialView = new _PartialViewClass();
+            public _PartialViewClass PartialView { get { return s_PartialView; } }
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public partial class _PartialViewClass
+            {
+                static readonly _ViewNamesClass s_ViewNames = new _ViewNamesClass();
+                public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
+                public class _ViewNamesClass
+                {
+                    public readonly string Delete = "Delete";
+                }
+                public readonly string Delete = "~/Views/Carrier/PartialView/Delete.cshtml";
+            }
         }
     }
 
