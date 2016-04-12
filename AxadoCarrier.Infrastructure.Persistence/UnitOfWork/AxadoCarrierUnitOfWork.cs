@@ -12,15 +12,13 @@ namespace AxadoCarrier.Infrastructure.Persistence.UnitOfWork
     {
         private AxadoCarrierDBContext DbContext {get; set;}
         public CarrierRepository CarrierRepository { get; private set; }
-        public VoteRepository VoteRepository { get; private set; }
-        public UserRepository UserRepository { get; private set; }
+        public RateRepository RateRepository { get; private set; }
 
         public AxadoCarrierUnitOfWork()
         {
             this.DbContext = new AxadoCarrierDBContext();
             this.CarrierRepository = new CarrierRepository(this.DbContext);
-            this.VoteRepository = new VoteRepository(this.DbContext);
-            this.UserRepository = new UserRepository(this.DbContext);
+            this.RateRepository = new RateRepository(this.DbContext);
         }
 
         public void Commit()

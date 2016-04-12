@@ -10,8 +10,7 @@ namespace AxadoCarrier.Infrastructure.Persistence.Entities
     {
         public Guid CarrierId { get; set; }
         public Carrier Carrier { get; set; }
-        public Guid UserId { get; set; }
-        public User User { get; set; }
-        public int Classification { get; set; } 
+        public String Username { get; set; }
+        public int RateValue { get; set; } 
     }
 }

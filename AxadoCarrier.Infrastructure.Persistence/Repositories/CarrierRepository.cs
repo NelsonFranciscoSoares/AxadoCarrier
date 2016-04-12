@@ -12,7 +12,6 @@ namespace AxadoCarrier.Infrastructure.Persistence.Repositories
         public CarrierRepository(DbContext dataContext)
             :base(dataContext)
         {
-
         }
     }
 }

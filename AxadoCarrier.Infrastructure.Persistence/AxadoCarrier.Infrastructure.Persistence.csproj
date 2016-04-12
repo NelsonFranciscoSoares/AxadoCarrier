@@ -48,22 +48,19 @@
   <ItemGroup>
     <Compile Include="DataContext\AxadoCarrierDBContext.cs" />
     <Compile Include="EFConfigurations\BaseEntityConfiguration.cs" />
-    <Compile Include="EFConfigurations\RateConfiguration.cs" />
     <Compile Include="EFConfigurations\CarrierConfiguration.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Carrier.cs" />
-    <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\Rate.cs" />
-    <Compile Include="Migrations\201604121225552_InitialSchema.cs" />
-    <Compile Include="Migrations\201604121225552_InitialSchema.Designer.cs">
-      <DependentUpon>201604121225552_InitialSchema.cs</DependentUpon>
+    <Compile Include="Migrations\201604121616158_InitialSchema.cs" />
+    <Compile Include="Migrations\201604121616158_InitialSchema.Designer.cs">
+      <DependentUpon>201604121616158_InitialSchema.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CarrierRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
-    <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="Repositories\VoteRepository..cs" />
+    <Compile Include="Repositories\RateRepository..cs" />
     <Compile Include="UnitOfWork\AxadoCarrierUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,8 +68,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604121225552_InitialSchema.resx">
-      <DependentUpon>201604121225552_InitialSchema.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604121616158_InitialSchema.resx">
+      <DependentUpon>201604121616158_InitialSchema.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

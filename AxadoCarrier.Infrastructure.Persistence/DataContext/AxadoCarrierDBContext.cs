@@ -1,4 +1,5 @@
-﻿using AxadoCarrier.Infrastructure.Persistence.Entities;
+﻿using AxadoCarrier.Infrastructure.Persistence.EFConfigurations;
+using AxadoCarrier.Infrastructure.Persistence.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,7 +13,6 @@ namespace AxadoCarrier.Infrastructure.Persistence.DataContext
     {
         private DbSet<Carrier> Carrier { get; set; }
         private DbSet<Rate> Vote { get; set; }
-        private DbSet<User> User { get; set; }
        
         public AxadoCarrierDBContext()
             : base("name=AxadoCarrierDBContext")
@@ -20,7 +20,13 @@ namespace AxadoCarrier.Infrastructure.Persistence.DataContext
             this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;
             this.Database.Log = System.Console.WriteLine;
-            Database.SetInitializer(new NullDatabaseInitializer<AxadoCarrierDBContext>());
+            Database.SetInitializer(new CreateDatabaseIfNotExists<AxadoCarrierDBContext>());
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Configurations.Add(new CarrierConfiguration());
         }
     }
 }
