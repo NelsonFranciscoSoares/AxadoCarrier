@@ -13,7 +13,7 @@ namespace AxadoCarrier.Infrastructure.Persistence.EFConfigurations
             this.Property(param => param.Name)
                 .IsRequired();
 
-            this.HasMany(param => param.Votes)
+            this.HasMany(param => param.Rates)
                 .WithRequired(param => param.Carrier)
                 .HasForeignKey(param => param.CarrierId)
                 .WillCascadeOnDelete(true);

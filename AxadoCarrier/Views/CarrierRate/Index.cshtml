@@ -1,7 +1,38 @@
-﻿<script>
+﻿@using AxadoCarrier.WebApplication.Models.CarrierModels
+@model IEnumerable<CarrierViewModel>
+
+<script>
     $(function () {
         $('.nav li#carrierRateId').addClass('active');
     });
 </script>
 
 <h2>Carrier Rate</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th width="33%">Code</th>
+            <th width="33%">Name</th>
+            <th width="33%">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var carrier in Model)
+        {
+            <tr>
+                <td>@carrier.Id</td>
+                <td>@carrier.Name</td>
+                <td>
+                    <div class="btn-group">
+                        @Html.ActionLink("Create", MVC.CarrierRate.ActionNames.Create, MVC.CarrierRate.Name, new { id = carrier.Id }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Details", MVC.CarrierRate.ActionNames.Details, MVC.CarrierRate.Name, new { id = carrier.Id }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Edit", MVC.CarrierRate.ActionNames.Edit, MVC.CarrierRate.Name, new { id = carrier.Id }, new { @class = "btn btn-primary" })
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />

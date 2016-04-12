@@ -1,0 +1,55 @@
+﻿@using AxadoCarrier.WebApplication.Models
+@model CarrierRateViewModel
+
+<script>
+    $(function () {
+        $('.nav li#carrierRateId').addClass('active');
+    });
+</script>
+
+<h2>Carrier Rate Create</h2>
+
+<br />
+
+@using (@Html.BeginForm(MVC.CarrierRate.ActionNames.Create, MVC.CarrierRate.Name, FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.HiddenFor(param => param.Id)
+    
+    <div class="form-group">
+        <label class="col-md-2 control-label">Id</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" value="@Model.Id" disabled>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-md-2 control-label">Name</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" value="@Model.Name" disabled>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Description</label>
+        <div class="col-sm-10">
+            <input class="form-control" type="text" value="@Model.Description" disabled>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Rate</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(param => param.RateValue, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Rate Description</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(param => param.RateDescription, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    @Html.ActionLink("Cancel", MVC.CarrierRate.ActionNames.Index, MVC.CarrierRate.Name, new { @class = "btn btn-primary" })
+}

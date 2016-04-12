@@ -220,6 +220,9 @@
     <Content Include="Views\Carrier\PartialView\Delete.cshtml" />
     <Content Include="Views\CarrierRate\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\CarrierRate\Create.cshtml" />
+    <Content Include="Views\CarrierRate\Details.cshtml" />
+    <Content Include="Views\CarrierRate\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

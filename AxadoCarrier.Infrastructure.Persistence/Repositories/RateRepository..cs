@@ -19,7 +19,6 @@ namespace AxadoCarrier.Infrastructure.Persistence.Repositories
         public Rate Get(Guid carrierId, String username)
         {
             return this.DataSet
-                .Include(param => param.Carrier)
                 .Where(param => param.CarrierId == carrierId && param.Username == username)
                 .FirstOrDefault();
         }

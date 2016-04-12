@@ -11,7 +11,7 @@ namespace AxadoCarrier.Infrastructure.Persistence.Repositories
     public abstract class Repository<T>
         where T : BaseEntity
     {
-        private DbContext DataContext { get; set; }
+        protected DbContext DataContext { get; set; }
         protected DbSet<T> DataSet { get; private set; }
 
         protected Repository(DbContext dbContext)

@@ -1,5 +1,6 @@
 ﻿using AxadoCarrier.ApplicationServices.AppServices;
 using AxadoCarrier.Infrastructure.Persistence;
+using AxadoCarrier.WebApplication.Models;
 using AxadoCarrier.WebApplication.Models.CarrierModels;
 using System;
 using System.Collections.Generic;

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace AxadoCarrier.WebApplication.Models
 {
-    public class CarrierRateViewModel
+    public class CarrierRateViewModel : CarrierViewModel
     {
-        public Guid Id { get; set; }
+        public Guid? RateId { get; set; }
         public int? RateValue { get; set; }
         public String Username { get; set; }
-        public CarrierViewModel Carrier { get; set; }
+        public String RateDescription { get; set; }
     }
 }
