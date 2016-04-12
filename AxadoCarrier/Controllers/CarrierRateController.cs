@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace AxadoCarrier.Controllers
 {
+    [Authorize]
     public partial class CarrierRateController : Controller
     {
         public virtual ActionResult Index()

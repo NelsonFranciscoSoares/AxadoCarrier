@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace AxadoCarrier.Controllers
 {
+    [Authorize]
     public partial class CarrierController : Controller
     {
         public CarrierApplicationService CarrierApplicationService { get; set; }

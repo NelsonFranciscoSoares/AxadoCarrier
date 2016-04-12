@@ -13,7 +13,7 @@ namespace AxadoCarrier.Infrastructure.Persistence.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201604121616158_InitialSchema"; }
+            get { return "201604121910576_InitialSchema"; }
         }
         
         string IMigrationMetadata.Source

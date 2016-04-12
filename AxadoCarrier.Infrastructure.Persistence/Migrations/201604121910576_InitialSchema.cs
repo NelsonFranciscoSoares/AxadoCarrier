@@ -12,7 +12,7 @@ namespace AxadoCarrier.Infrastructure.Persistence.Migrations
                 c => new
                     {
                         Id = c.Guid(nullable: false),
-                        Name = c.String(),
+                        Name = c.String(nullable: false),
                         Description = c.String(),
                     })
                 .PrimaryKey(t => t.Id);

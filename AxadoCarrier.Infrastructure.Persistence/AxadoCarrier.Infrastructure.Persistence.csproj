@@ -52,9 +52,9 @@
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Carrier.cs" />
     <Compile Include="Entities\Rate.cs" />
-    <Compile Include="Migrations\201604121616158_InitialSchema.cs" />
-    <Compile Include="Migrations\201604121616158_InitialSchema.Designer.cs">
-      <DependentUpon>201604121616158_InitialSchema.cs</DependentUpon>
+    <Compile Include="Migrations\201604121910576_InitialSchema.cs" />
+    <Compile Include="Migrations\201604121910576_InitialSchema.Designer.cs">
+      <DependentUpon>201604121910576_InitialSchema.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,8 +68,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201604121616158_InitialSchema.resx">
-      <DependentUpon>201604121616158_InitialSchema.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604121910576_InitialSchema.resx">
+      <DependentUpon>201604121910576_InitialSchema.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

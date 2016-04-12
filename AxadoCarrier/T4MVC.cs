@@ -27,9 +27,9 @@ using T4MVC;
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static partial class MVC
 {
+    public static AxadoCarrier.Controllers.AccountController Account = new AxadoCarrier.Controllers.T4MVC_AccountController();
     public static AxadoCarrier.Controllers.CarrierController Carrier = new AxadoCarrier.Controllers.T4MVC_CarrierController();
     public static AxadoCarrier.Controllers.CarrierRateController CarrierRate = new AxadoCarrier.Controllers.T4MVC_CarrierRateController();
-    public static T4MVC.HomeController Home = new T4MVC.HomeController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
