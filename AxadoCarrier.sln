@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxadoCarrier", "AxadoCarrier\AxadoCarrier.csproj", "{CD8881B3-897A-4D6B-9ACC-17C417798023}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{6B7E1A6B-9673-4761-955D-2D7A44206623}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{595C4D47-047B-4F88-B27E-859C28887DDF}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\AxadoCarrier-WAWS-dev.json = PublishScripts\Configurations\AxadoCarrier-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxadoCarrier.Infrastructure.Persistence", "AxadoCarrier.Infrastructure.Persistence\AxadoCarrier.Infrastructure.Persistence.csproj", "{FBCBE154-94C0-467A-9040-5ABAD3291742}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxadoCarrier.ApplicationServices", "AxadoCarrier.ApplicationServices\AxadoCarrier.ApplicationServices.csproj", "{FF2D5A64-AD21-41B7-A08D-1E626EAD3E3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxadoCarrier.WebApplication.Models", "AxadoCarrier.WebApplication.Models\AxadoCarrier.WebApplication.Models.csproj", "{970C3C63-5A49-4B68-96F3-EDF8BE5A93E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD8881B3-897A-4D6B-9ACC-17C417798023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD8881B3-897A-4D6B-9ACC-17C417798023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD8881B3-897A-4D6B-9ACC-17C417798023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD8881B3-897A-4D6B-9ACC-17C417798023}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBCBE154-94C0-467A-9040-5ABAD3291742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBCBE154-94C0-467A-9040-5ABAD3291742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBCBE154-94C0-467A-9040-5ABAD3291742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBCBE154-94C0-467A-9040-5ABAD3291742}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF2D5A64-AD21-41B7-A08D-1E626EAD3E3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF2D5A64-AD21-41B7-A08D-1E626EAD3E3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF2D5A64-AD21-41B7-A08D-1E626EAD3E3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF2D5A64-AD21-41B7-A08D-1E626EAD3E3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{970C3C63-5A49-4B68-96F3-EDF8BE5A93E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{970C3C63-5A49-4B68-96F3-EDF8BE5A93E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{970C3C63-5A49-4B68-96F3-EDF8BE5A93E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{970C3C63-5A49-4B68-96F3-EDF8BE5A93E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{595C4D47-047B-4F88-B27E-859C28887DDF} = {6B7E1A6B-9673-4761-955D-2D7A44206623}
+	EndGlobalSection
+EndGlobal
