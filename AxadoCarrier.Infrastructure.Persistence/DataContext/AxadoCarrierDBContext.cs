@@ -11,7 +11,7 @@ namespace AxadoCarrier.Infrastructure.Persistence.DataContext
     public class AxadoCarrierDBContext : DbContext
     {
         private DbSet<Carrier> Carrier { get; set; }
-        private DbSet<Vote> Vote { get; set; }
+        private DbSet<Rate> Vote { get; set; }
         private DbSet<User> User { get; set; }
        
         public AxadoCarrierDBContext()

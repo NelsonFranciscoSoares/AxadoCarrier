@@ -9,6 +9,6 @@ namespace AxadoCarrier.Infrastructure.Persistence
 {
     public class Carrier : BaseEntity
     {
-        public List<Vote> Votes { get; set; }
+        public List<Rate> Votes { get; set; }
     }
 }

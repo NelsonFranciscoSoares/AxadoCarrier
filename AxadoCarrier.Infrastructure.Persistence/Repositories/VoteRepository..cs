@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AxadoCarrier.Infrastructure.Persistence.Repositories
 {
-    public class VoteRepository : Repository<Vote>
+    public class VoteRepository : Repository<Rate>
     {
         public VoteRepository(DbContext dataContext)
             :base(dataContext)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AxadoCarrier.Infrastructure.Persistence.Entities
 {
-    public class Vote : BaseEntity
+    public class Rate : BaseEntity
     {
         public Guid CarrierId { get; set; }
         public Carrier Carrier { get; set; }

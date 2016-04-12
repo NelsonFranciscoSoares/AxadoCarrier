@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace AxadoCarrier.Infrastructure.Persistence.EFConfigurations
 {
-    public class VoteConfiguration : BaseEntityConfiguration<Vote>
+    public class RateConfiguration : BaseEntityConfiguration<Rate>
     {
-        public VoteConfiguration()
+        public RateConfiguration()
         {
             this.HasRequired(param => param.User)
                 .WithMany(param => param.Votes)

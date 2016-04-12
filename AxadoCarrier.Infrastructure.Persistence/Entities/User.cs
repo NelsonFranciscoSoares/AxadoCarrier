@@ -10,6 +10,6 @@ namespace AxadoCarrier.Infrastructure.Persistence.Entities
     {
         public String Username { get; set; }
         public String Password { get; set; }
-        public List<Vote> Votes { get; set; }
+        public List<Rate> Votes { get; set; }
     }
 }
