@@ -12,8 +12,8 @@
 <body>
     <div class="container body-content">
         <ul class="nav nav-tabs">
-            <li role="presentation" class="active">@Html.ActionLink("Carrier Management", MVC.Carrier.ActionNames.Index, MVC.Carrier.Name)</li>
-            <li role="presentation"><a href="#">Rate Carrier</a></li>
+            <li role="presentation" id="carrierManagementId">@Html.ActionLink("Carrier Management", MVC.Carrier.ActionNames.Index, MVC.Carrier.Name)</li>
+            <li role="presentation" id="carrierRateId">@Html.ActionLink("Carrier Rate", MVC.CarrierRate.ActionNames.Index, MVC.CarrierRate.Name)</li>
         </ul>
         @RenderBody()
     </div>
