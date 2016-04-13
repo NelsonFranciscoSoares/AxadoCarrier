@@ -22,5 +22,12 @@ namespace AxadoCarrier.Infrastructure.Persistence.Repositories
                 .Where(param => param.CarrierId == carrierId && param.Username == username)
                 .FirstOrDefault();
         }
+
+        public bool CheckIfUserAlreadyRates(Guid carrierId, String username)
+        {
+            return 
+                this.DataSet
+                    .FirstOrDefault(param => param.Username == username && param.CarrierId == carrierId) != null;
+        }
     }
 }

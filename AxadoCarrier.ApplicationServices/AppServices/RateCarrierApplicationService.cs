@@ -11,8 +11,16 @@ namespace AxadoCarrier.ApplicationServices
 {
     public class RateCarrierApplicationService : ApplicationService
     {
+        public bool CheckIfUserAlreadyRates(Guid carrierId, String username)
+        {
+            return this.UnitOfWork.RateRepository.CheckIfUserAlreadyRates(carrierId, username);
+        }
+        
         public Guid Create(CarrierRateViewModel viewModel)
         {
+            if (this.UnitOfWork.RateRepository.CheckIfUserAlreadyRates(viewModel.Id, viewModel.Username) == true)
+                throw new Exception("User already rates");
+
             var carrierRate = new Rate
             {
                 CarrierId = viewModel.Id,

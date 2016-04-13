@@ -44,6 +44,13 @@ namespace AxadoCarrier.Controllers
             var username = HttpContext.Session["CurrentUser"] as string;
             model.Username = username;
 
+            if(this.RateCarrierApplicationService.CheckIfUserAlreadyRates(model.Id, username) == true)
+            {
+                ModelState.AddModelError(string.Empty, "User can't vote twice.");
+
+                return View(model);
+            }
+
             var rateId = this.RateCarrierApplicationService.Create(model);
 
             return RedirectToAction(MVC.CarrierRate.Details(model.Id));
