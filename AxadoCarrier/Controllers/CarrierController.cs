@@ -11,27 +11,28 @@ namespace AxadoCarrier.Controllers
     [Authorize]
     public partial class CarrierController : Controller
     {
-        public CarrierApplicationService CarrierApplicationService { get; set; }
-
-        public CarrierController()
-        {
-            this.CarrierApplicationService = new CarrierApplicationService();
-        }
+        public CarrierController() { }
 
         [HttpGet]
         public virtual ActionResult Index()
         {
-            var carrierList = this.CarrierApplicationService.GetAll();
+            using (var proxy = new AxadoCarrier.ServiceReference.WCFAxadoWSClient())
+            {
+                var carrierList = proxy.GetAllCarriers().ToList();
 
-            return View(carrierList);
+                return View(carrierList);
+            }
         }
 
         [HttpGet]
         public virtual ActionResult Details(Guid id)
         {
-            var carrier = this.CarrierApplicationService.Get(id);
+            using (var proxy = new AxadoCarrier.ServiceReference.WCFAxadoWSClient())
+            {
+                var carrier = proxy.GetCarrier(id);
 
-            return View(carrier);
+                return View(carrier);
+            }
         }
 
         [HttpGet]
@@ -45,33 +46,45 @@ namespace AxadoCarrier.Controllers
         [HttpPost]
         public virtual ActionResult Create(CarrierViewModel model)
         {
-            var id = this.CarrierApplicationService.Create(model);
+            using (var proxy = new AxadoCarrier.ServiceReference.WCFAxadoWSClient())
+            {
+                var id = proxy.CarrierCreate(model);
 
-            return RedirectToAction(MVC.Carrier.Details(id));
+                return RedirectToAction(MVC.Carrier.Details(id));
+            }
         }
 
         [HttpGet]
         public virtual ActionResult Edit(Guid id)
         {
-            var carrier = this.CarrierApplicationService.Get(id);
+            using (var proxy = new AxadoCarrier.ServiceReference.WCFAxadoWSClient())
+            {
+                var carrier = proxy.GetCarrier(id);
 
-            return View(carrier);
+                return View(carrier);
+            }
         }
 
         [HttpPost]
         public virtual ActionResult Edit(CarrierViewModel model)
         {
-            this.CarrierApplicationService.Update(model);
+            using (var proxy = new AxadoCarrier.ServiceReference.WCFAxadoWSClient())
+            {
+                proxy.CarrierUpdate(model);
 
-            return RedirectToAction(MVC.Carrier.Details(model.Id));
+                return RedirectToAction(MVC.Carrier.Details(model.Id));
+            }
         }
 
         [HttpPost]
         public virtual ActionResult Delete(Guid id)
         {
-            this.CarrierApplicationService.Delete(id);
+            using (var proxy = new AxadoCarrier.ServiceReference.WCFAxadoWSClient())
+            {
+               proxy.CarrierDelete(id);
 
-            return RedirectToAction(MVC.Carrier.Index());
+                return RedirectToAction(MVC.Carrier.Index());
+            }
         }
     }
 }

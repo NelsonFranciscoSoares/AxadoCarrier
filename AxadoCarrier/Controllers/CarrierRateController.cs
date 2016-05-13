@@ -11,21 +11,20 @@ namespace AxadoCarrier.Controllers
     [Authorize]
     public partial class CarrierRateController : Controller
     {
-        public CarrierApplicationService CarrierApplicationService { get; set; }
-        public RateCarrierApplicationService RateCarrierApplicationService { get; set; }
 
         public CarrierRateController()
         {
-            this.CarrierApplicationService = new CarrierApplicationService();
-            this.RateCarrierApplicationService = new RateCarrierApplicationService();
         }
 
         [HttpGet]
         public virtual ActionResult Index()
         {
-            var carrierList = this.CarrierApplicationService.GetAll();
+            using (var proxy = new AxadoCarrier.ServiceReference.WCFAxadoWSClient())
+            {
+                var carrierList = proxy.GetAllCarriers();
 
-            return View(carrierList);
+                return View(carrierList);
+            }
         }
 
         [HttpGet]
@@ -33,9 +32,11 @@ namespace AxadoCarrier.Controllers
         {
             var username = HttpContext.Session["CurrentUser"] as string;
 
-            var model = this.RateCarrierApplicationService.Get(id, username);
-
-            return View(model);
+            using (var proxy = new AxadoCarrier.ServiceReference.WCFAxadoWSClient())
+            {
+                var model = proxy.GetRate(new CarrierRateViewModel{ Id = id, Username = username});
+                return View(model);
+            }
         }
 
         [HttpPost]
@@ -44,16 +45,19 @@ namespace AxadoCarrier.Controllers
             var username = HttpContext.Session["CurrentUser"] as string;
             model.Username = username;
 
-            if(this.RateCarrierApplicationService.CheckIfUserAlreadyRates(model.Id, username) == true)
+            using (var proxy = new AxadoCarrier.ServiceReference.WCFAxadoWSClient())
             {
-                ModelState.AddModelError(string.Empty, "User can't vote twice.");
+                if (proxy.CheckIfUserAlreadyRates(new CarrierRateViewModel{ Id = model.Id, Username = username}) == true)
+                {
+                    ModelState.AddModelError(string.Empty, "User can't vote twice.");
 
-                return View(model);
+                    return View(model);
+                }
+
+                var rateId = proxy.RateCreate(model);
+
+                return RedirectToAction(MVC.CarrierRate.Details(model.Id));
             }
-
-            var rateId = this.RateCarrierApplicationService.Create(model);
-
-            return RedirectToAction(MVC.CarrierRate.Details(model.Id));
         }
 
         [HttpGet]
@@ -61,9 +65,12 @@ namespace AxadoCarrier.Controllers
         {
             var username = HttpContext.Session["CurrentUser"] as string;
 
-            var model = this.RateCarrierApplicationService.Get(id, username);
-            
-            return View(model);
+            using (var proxy = new AxadoCarrier.ServiceReference.WCFAxadoWSClient())
+            {
+                var model = proxy.GetRate(new CarrierRateViewModel { Id = id, Username = username });
+
+                return View(model);
+            } 
         }
 
         [HttpGet]
@@ -71,10 +78,13 @@ namespace AxadoCarrier.Controllers
         {
             var username = HttpContext.Session["CurrentUser"] as string;
 
-            var model = this.RateCarrierApplicationService.Get(id, username);
-            model.Username = username;
+            using (var proxy = new AxadoCarrier.ServiceReference.WCFAxadoWSClient())
+            {
+                var model = proxy.GetRate(new CarrierRateViewModel { Id = id, Username = username });
+                model.Username = username;
 
-            return View(model);
+                return View(model);
+            } 
         }
 
         [HttpPost]
@@ -82,9 +92,13 @@ namespace AxadoCarrier.Controllers
         {
             var username = HttpContext.Session["CurrentUser"] as string;
 
-            this.RateCarrierApplicationService.Update(model);
+            using (var proxy = new AxadoCarrier.ServiceReference.WCFAxadoWSClient())
+            {
+                model.Username = username;
+                proxy.RateUpdate(model);
 
-            return RedirectToAction(MVC.CarrierRate.Details(model.Id));
+                return RedirectToAction(MVC.CarrierRate.Details(model.Id));
+            }
         }
     }
 }

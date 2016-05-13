@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="af75314d-9721-4f72-9fce-ffc8e2eedfa0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:65087/WCFAxadoHost.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WCFAxadoHost.xsd" MetadataType="Schema" ID="d6d2b185-4117-4a85-8738-18089710e241" SourceId="1" SourceUrl="http://localhost:65087/WCFAxadoHost.svc?xsd=xsd0" />
+    <MetadataFile FileName="WCFAxadoWS.wsdl" MetadataType="Wsdl" ID="98bff3be-1617-4900-a2f8-10aef9296590" SourceId="1" SourceUrl="http://localhost:65087/WCFAxadoHost.svc?wsdl" />
+    <MetadataFile FileName="WCFAxadoHost1.xsd" MetadataType="Schema" ID="a943ab3a-58a3-4c04-be3c-9e4f44424c01" SourceId="1" SourceUrl="http://localhost:65087/WCFAxadoHost.svc?xsd=xsd3" />
+    <MetadataFile FileName="WCFAxadoHost2.xsd" MetadataType="Schema" ID="127d3d30-952d-4584-aa77-6ee64e673ba7" SourceId="1" SourceUrl="http://localhost:65087/WCFAxadoHost.svc?xsd=xsd1" />
+    <MetadataFile FileName="WCFAxadoHost3.xsd" MetadataType="Schema" ID="71649aab-5237-4630-94a5-6e9d0fe56cb5" SourceId="1" SourceUrl="http://localhost:65087/WCFAxadoHost.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

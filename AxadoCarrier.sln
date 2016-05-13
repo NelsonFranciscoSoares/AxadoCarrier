@@ -4,12 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxadoCarrier", "AxadoCarrier\AxadoCarrier.csproj", "{CD8881B3-897A-4D6B-9ACC-17C417798023}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B0BDD98D-F8EC-4197-8876-871B89BE0B56} = {B0BDD98D-F8EC-4197-8876-871B89BE0B56}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxadoCarrier.Infrastructure.Persistence", "AxadoCarrier.Infrastructure.Persistence\AxadoCarrier.Infrastructure.Persistence.csproj", "{FBCBE154-94C0-467A-9040-5ABAD3291742}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxadoCarrier.ApplicationServices", "AxadoCarrier.ApplicationServices\AxadoCarrier.ApplicationServices.csproj", "{FF2D5A64-AD21-41B7-A08D-1E626EAD3E3A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AxadoCarrier.WebApplication.Models", "AxadoCarrier.WebApplication.Models\AxadoCarrier.WebApplication.Models.csproj", "{970C3C63-5A49-4B68-96F3-EDF8BE5A93E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axado.Infrastructure.WCFHost", "Axado.Infrastructure.WCFHost\Axado.Infrastructure.WCFHost.csproj", "{B0BDD98D-F8EC-4197-8876-871B89BE0B56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +38,10 @@ Global
 		{970C3C63-5A49-4B68-96F3-EDF8BE5A93E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{970C3C63-5A49-4B68-96F3-EDF8BE5A93E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{970C3C63-5A49-4B68-96F3-EDF8BE5A93E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0BDD98D-F8EC-4197-8876-871B89BE0B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0BDD98D-F8EC-4197-8876-871B89BE0B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0BDD98D-F8EC-4197-8876-871B89BE0B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0BDD98D-F8EC-4197-8876-871B89BE0B56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

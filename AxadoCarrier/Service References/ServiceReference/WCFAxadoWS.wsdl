@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WCFAxadoWS" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:65087/WCFAxadoHost.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:65087/WCFAxadoHost.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:65087/WCFAxadoHost.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AxadoCarrier.WebApplication.Models.CarrierModels" />
+      <xsd:import schemaLocation="http://localhost:65087/WCFAxadoHost.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AxadoCarrier.WebApplication.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWCFAxadoWS_CarrierCreate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CarrierCreate" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_CarrierCreate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CarrierCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_CarrierUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CarrierUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_CarrierUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CarrierUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_GetAllCarriers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCarriers" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_GetAllCarriers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCarriersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_GetCarrier_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarrier" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_GetCarrier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarrierResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_CarrierDelete_InputMessage">
+    <wsdl:part name="parameters" element="tns:CarrierDelete" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_CarrierDelete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CarrierDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_RateCreate_InputMessage">
+    <wsdl:part name="parameters" element="tns:RateCreate" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_RateCreate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RateCreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_RateUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:RateUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_RateUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RateUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_GetRate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRate" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_GetRate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_CheckIfUserAlreadyRates_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckIfUserAlreadyRates" />
+  </wsdl:message>
+  <wsdl:message name="IWCFAxadoWS_CheckIfUserAlreadyRates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckIfUserAlreadyRatesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWCFAxadoWS">
+    <wsdl:operation name="CarrierCreate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAxadoWS/CarrierCreate" message="tns:IWCFAxadoWS_CarrierCreate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAxadoWS/CarrierCreateResponse" message="tns:IWCFAxadoWS_CarrierCreate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CarrierUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAxadoWS/CarrierUpdate" message="tns:IWCFAxadoWS_CarrierUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAxadoWS/CarrierUpdateResponse" message="tns:IWCFAxadoWS_CarrierUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCarriers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAxadoWS/GetAllCarriers" message="tns:IWCFAxadoWS_GetAllCarriers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAxadoWS/GetAllCarriersResponse" message="tns:IWCFAxadoWS_GetAllCarriers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrier">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAxadoWS/GetCarrier" message="tns:IWCFAxadoWS_GetCarrier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAxadoWS/GetCarrierResponse" message="tns:IWCFAxadoWS_GetCarrier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CarrierDelete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAxadoWS/CarrierDelete" message="tns:IWCFAxadoWS_CarrierDelete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAxadoWS/CarrierDeleteResponse" message="tns:IWCFAxadoWS_CarrierDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RateCreate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAxadoWS/RateCreate" message="tns:IWCFAxadoWS_RateCreate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAxadoWS/RateCreateResponse" message="tns:IWCFAxadoWS_RateCreate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RateUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAxadoWS/RateUpdate" message="tns:IWCFAxadoWS_RateUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAxadoWS/RateUpdateResponse" message="tns:IWCFAxadoWS_RateUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAxadoWS/GetRate" message="tns:IWCFAxadoWS_GetRate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAxadoWS/GetRateResponse" message="tns:IWCFAxadoWS_GetRate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckIfUserAlreadyRates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCFAxadoWS/CheckIfUserAlreadyRates" message="tns:IWCFAxadoWS_CheckIfUserAlreadyRates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCFAxadoWS/CheckIfUserAlreadyRatesResponse" message="tns:IWCFAxadoWS_CheckIfUserAlreadyRates_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="soap" type="tns:IWCFAxadoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CarrierCreate">
+      <soap:operation soapAction="http://tempuri.org/IWCFAxadoWS/CarrierCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarrierUpdate">
+      <soap:operation soapAction="http://tempuri.org/IWCFAxadoWS/CarrierUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCarriers">
+      <soap:operation soapAction="http://tempuri.org/IWCFAxadoWS/GetAllCarriers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrier">
+      <soap:operation soapAction="http://tempuri.org/IWCFAxadoWS/GetCarrier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarrierDelete">
+      <soap:operation soapAction="http://tempuri.org/IWCFAxadoWS/CarrierDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateCreate">
+      <soap:operation soapAction="http://tempuri.org/IWCFAxadoWS/RateCreate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateUpdate">
+      <soap:operation soapAction="http://tempuri.org/IWCFAxadoWS/RateUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRate">
+      <soap:operation soapAction="http://tempuri.org/IWCFAxadoWS/GetRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIfUserAlreadyRates">
+      <soap:operation soapAction="http://tempuri.org/IWCFAxadoWS/CheckIfUserAlreadyRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WCFAxadoWS">
+    <wsdl:port name="soap" binding="tns:soap">
+      <soap:address location="http://localhost:65087/WCFAxadoHost.svc/soap" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
